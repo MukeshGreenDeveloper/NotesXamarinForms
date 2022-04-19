@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.MainPage">
+    <RelativeLayout HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+    <!-- Layout children in two rows -->
+    <Grid RowDefinitions="Auto,*"
+          IsVisible="true"
+          x:Name="mGridLayout">
+        <Image Source="xamarin_logo.png"
+               BackgroundColor="{OnPlatform iOS=LightSlateGray, Android=#2196F3}"
+               VerticalOptions="Center"
+               HeightRequest="64" />
+        <!-- Layout children vertically -->
+        <StackLayout Grid.Row="1"
+                     Margin="20"
+                     Spacing="20">
+            <Label FontSize="22">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Notes"
+                                  FontAttributes="Bold"
+                                  FontSize="22" />
+                            <Span Text=" v1.0" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="This app is written in XAML and C# with the Xamarin Platform." />
+            <Button Text="Learn more"
+                    Clicked="OnButtonClicked" />
+        </StackLayout>
+    </Grid>
+        <StackLayout
+            Orientation="Vertical"
+            x:Name="layoutWeb"
+            IsVisible="false">
+            <Grid RowDefinitions="Auto"
+                 HorizontalOptions="Center"
+                     WidthRequest="360"
+                     Background="#00ffffff">
+            <Label Text="...."
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   HorizontalOptions="Fill"
+                   x:Name="urlLable"
+                   Padding="10,10,0,0"
+                   MaxLines="1"
+                   VerticalTextAlignment="Center"
+                   LineBreakMode="TailTruncation"
+                   FontSize="Small"/>
+                <Button Text="X"
+                   Clicked="OnCloseWebView"
+                   FontSize="Subtitle"
+                   Padding="10,0,0,0"
+                    BackgroundColor="White"
+                   HorizontalOptions="EndAndExpand"
+                   />
+        </Grid>
+            <WebView  x:Name="mWebView" HorizontalOptions="FillAndExpand"
+             VerticalOptions="FillAndExpand"
+              Navigated="webviewNavigated"
+              Navigating="webviewNavigating"
+              Background="red"
+              HeightRequest="730"
+              BackgroundColor="red"/>
+        </StackLayout>
+        <Label Text="Loading..." 
+               TextColor="White"
+               WidthRequest="380"
+               BackgroundColor="#80000000"
+               FontSize="Large"
+               IsVisible="false"
+               x:Name="labelLoading"
+               HeightRequest="730"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"/>
+    </RelativeLayout>
+</ContentPage>
