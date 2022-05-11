@@ -20,7 +20,7 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>
-                            <Span Text="Notes"
+                            <Span Text="Test"
                                   FontAttributes="Bold"
                                   FontSize="22" />
                             <Span Text=" v1.0" />
@@ -29,7 +29,7 @@
                 </Label.FormattedText>
             </Label>
             <Label Text="This app is written in XAML and C# with the Xamarin Platform." />
-            <Button Text="Learn more"
+            <Button Text="View Web"
                     Clicked="OnButtonClicked" />
         </StackLayout>
     </Grid>
@@ -52,12 +52,12 @@
                    LineBreakMode="TailTruncation"
                    FontSize="Small"/>
                 <Button Text="X"
-                   Clicked="OnCloseWebView"
-                   FontSize="Subtitle"
-                   Padding="10,0,0,0"
-                    BackgroundColor="White"
-                   HorizontalOptions="EndAndExpand"
-                   />
+                        FontAttributes="Bold"
+                        Clicked="OnCloseWebView"
+                        FontSize="Subtitle"
+                        Padding="10,0,0,0"
+                        BackgroundColor="White"
+                        HorizontalOptions="EndAndExpand"/>
         </Grid>
             <WebView  x:Name="mWebView" HorizontalOptions="FillAndExpand"
              VerticalOptions="FillAndExpand"
