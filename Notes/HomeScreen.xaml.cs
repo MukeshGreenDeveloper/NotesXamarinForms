@@ -17,19 +17,17 @@ namespace Notes
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             
-            for(int row = 0; row < 4; row++)
+            for(int row = 0; row < 10; row++)
             {
                 Label l = new Label
                 {
                     Text = "LabelText",
                     FontAttributes = FontAttributes.Bold,
-
                 };
                 Label l2 = new Label
                 {
                     Text = "LabelText",
                     FontAttributes = FontAttributes.Bold,
-
                 };
                 Frame R1View = new Frame
                 {
@@ -49,10 +47,9 @@ namespace Notes
                     HorizontalOptions = new LayoutOptions(LayoutAlignment.Fill, true),
                     VerticalOptions = new LayoutOptions(LayoutAlignment.Center, true)
                 };
-                gridNotes.Children.Add(R1View, row, 0);
-                gridNotes.Children.Add(R2View, row, 1);
+                gridNotes.Children.Add(R1View, 0, row);
+                gridNotes.Children.Add(R2View, 1, row);
             }
-            gridNotes.SetRowSpan = 2;
             Console.WriteLine("Log Me=>"+ gridNotes.Children.Count());
             //gridNotes.Children.Add(view,0,0);
             //gridNotes.Children.Add(view, 0, 1);
