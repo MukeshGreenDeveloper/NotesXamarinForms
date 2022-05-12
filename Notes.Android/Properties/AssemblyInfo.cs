@@ -30,3 +30,5 @@ using Xamarin.Forms;
 [assembly: UsesPermission(Android.Manifest.Permission.Internet)]
 [assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
 [assembly: ExportFont("PoppinsRegular.ttf", Alias = "PopinsRegular")]
+[assembly: ExportFont("Hubballi_Regular.ttf", Alias = "HubballiRegular")]
+[assembly: ExportFont("Inter.ttf", Alias = "Inter")]

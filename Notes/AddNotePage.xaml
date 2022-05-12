@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.AddNotePage"
+             xmlns:local="clr-namespace:Notes">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="info.png"
+                     Order="Default"
+                     Priority="0" />
+        <ToolbarItem IconImageSource="wallet.png"
+                     Order="Default"
+                     Priority="0" />
+        <ToolbarItem IconImageSource="Settings.png"
+                     Order="Default"
+                     Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                     Background="white"
+                     Margin="0,0,10,0">
+            <StackLayout Orientation="Horizontal"
+                         Padding="0,12,0,12">
+                <ImageButton BackgroundColor="White"
+                             Source="Arrow"
+                             Padding="6"
+                             Margin="10,0,0,0"
+                             HorizontalOptions="Start"
+                             HeightRequest="35"
+                             Clicked="backPressed"/>
+                <Label HorizontalOptions="CenterAndExpand" />
+                <ImageButton BackgroundColor="White"
+                             Source="info"
+                             Padding="4"
+                             HorizontalOptions="End"
+                             HeightRequest="35"/>
+                <ImageButton BackgroundColor="White"
+                             Source="Settings"
+                             Padding="4"
+                             HorizontalOptions="End"
+                             HeightRequest="35"/>
+                <ImageButton BackgroundColor="White"
+                             Source="wallet" 
+                             Padding="4"
+                             HorizontalOptions="End"
+                             HeightRequest="35"/>
+            </StackLayout>
+            <local:NoLineEntry 
+                   VerticalOptions="Start"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="8,8,8,0"
+                   x:Name="EntryTitle"
+                   BackgroundColor="Transparent"
+                               Placeholder="Title"
+                               FontFamily="Inter"
+                               FontSize="Large"
+                   MaxLength="40"/>
+            <local:NoLineEditor
+                   Margin="8,-10,8,8"
+                   VerticalOptions="Start"
+                   x:Name="EntryDescription"
+                   HorizontalOptions="FillAndExpand"
+                                Placeholder="Note"
+                                FontFamily="Inter"
+                                MinimumHeightRequest="180"
+                HeightRequest="1000"
+                AutoSize="TextChanges"
+                   FontSize="16"/>
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="EndAndExpand"
+                         Padding="20,12,8,12">
+                <ImageButton BackgroundColor="White"
+                             Source="Add"
+                             Padding="4"
+                             HorizontalOptions="Start"
+                             HeightRequest="30" />
+                <ImageButton BackgroundColor="White"
+                             Source="paint"
+                             Padding="3"
+                             Margin="8,0,0,0"
+                             HeightRequest="30" />
+                <Label HorizontalOptions="CenterAndExpand"
+                       Text="Edited 3:45 pm"
+                       Padding="-18,0,0,0"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center"
+                       FontSize="Small"/>
+                <ImageButton BackgroundColor="White"
+                             Source="dots"
+                             Padding="4"
+                             HorizontalOptions="End"
+                             HeightRequest="35" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

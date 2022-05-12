@@ -4,7 +4,8 @@
              x:Class="Notes.HomeScreen">
     <ContentPage.Content>
         <StackLayout Background="white" VerticalOptions="FillAndExpand">
-            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+            
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                          VerticalOptions="Fill">
                 <Frame BackgroundColor="{x:StaticResource Key=SearchBarBG}"
                        CornerRadius="30"
@@ -45,36 +46,104 @@
                     </StackLayout>
                 </Frame>
             </StackLayout>
-            <Grid HorizontalOptions="FillAndExpand"
-                  VerticalOptions="FillAndExpand"
-                  RowSpacing="10"
-                  ColumnSpacing="20"
-                  Margin="16,16,16,16"
-                  x:Name="gridNotes">
-            </Grid>
-            <Grid HorizontalOptions="FillAndExpand"
-                            VerticalOptions="EndAndExpand">
-                <Frame BackgroundColor="{StaticResource Key=SearchBarBG}"
-                   HorizontalOptions="FillAndExpand"
-                   VerticalOptions="EndAndExpand"
-                   HasShadow="False"
-                       HeightRequest="60"
-                   Padding="0,0,30,0">
-                    <Grid
-                    HorizontalOptions="End">
-                        <Image Source="curved_bottom_bg_gray"
-                       Aspect="AspectFill"
-                       WidthRequest="80"
-                       VerticalOptions="Start"/>
-                    </Grid>
-                </Frame>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackLayout  Grid.Row="0"
+                              Grid.Column="0"
+                              VerticalOptions="FillAndExpand">
+                
+                <ScrollView x:Name="scroller"
+                            Orientation="Vertical"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="Fill"
+                            Grid.RowSpan="10"
+                            Grid.ColumnSpan="10">
+                    <StackLayout x:Name="stacker"
+                                 VerticalOptions="Start"
+                                 Padding="0"
+                                 Spacing="0">
+                        <Grid HorizontalOptions="FillAndExpand"
+                              VerticalOptions="StartAndExpand"
+                              RowSpacing="10"
+                              ColumnSpacing="20"
+                              Margin="0,0,0,-160"
+                              x:Name="gridNotes">
+                        </Grid>
+                    </StackLayout>
+                </ScrollView>
+
+                <Grid HorizontalOptions="FillAndExpand"
+                             Grid.Row="0"
+                             Grid.Column="0"
+                             MinimumHeightRequest="50">
+                    <!--//Box Thing-->
+                    <Frame BackgroundColor="{StaticResource Key=SearchBarBG}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="EndAndExpand"
+                           HasShadow="False"
+                           HeightRequest="60"
+                           MinimumHeightRequest="60"
+                           Padding="0,0,30,0">
+                        <Grid HorizontalOptions="End">
+                            <Image Source="curved_bottom_bg_gray"
+                                   Aspect="AspectFill"
+                                   WidthRequest="80"
+                                   VerticalOptions="Start" />
+                        </Grid>
+                    </Frame>
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="FillAndExpand"
+                                 Margin="0,0,0,10"
+                                 VerticalOptions="End">
+                        <ImageButton BackgroundColor="Transparent"
+                                     Source="checkbox"
+                                     Margin="10,0,0,0"
+                                     Padding="10" />
+                        <ImageButton BackgroundColor="Transparent"
+                                     Source="brush"
+                                     Margin="15,0,0,0"
+                                     WidthRequest="30" />
+                        <ImageButton BackgroundColor="Transparent"
+                                     Source="mic"
+                                     WidthRequest="25"
+                                     Margin="20,0,0,0" />
+                        <ImageButton BackgroundColor="Transparent"
+                                     Source="picture"
+                                     WidthRequest="25"
+                                     Margin="20,0,0,0" />
+                    </StackLayout>
+                   
+                </Grid>
+            </StackLayout>
 
                 <ImageButton BackgroundColor="{StaticResource Key=SearchBarBG}"
-                         Source="plus"
-                         Margin="0,0,40,50"
-                         Padding="18"
-                         CornerRadius="14"
-                         HorizontalOptions="End"/>
+                             Source="plus"
+                             Margin="0,0,40,40"
+                             Padding="18"
+                             VerticalOptions="End"
+                             CornerRadius="14"
+                             Clicked="openAddPage"
+                             HorizontalOptions="End" />
+            </Grid>
+            <!--<Grid HorizontalOptions="FillAndExpand"
+                  VerticalOptions="EndAndExpand"
+                        Grid.Row="0" Grid.Column="1">
+                <Frame BackgroundColor="{StaticResource Key=SearchBarBG}"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="EndAndExpand"
+                       HasShadow="False"
+                       HeightRequest="60"
+                       Padding="0,0,30,0">
+                    <Grid
+                        HorizontalOptions="End">
+                        <Image Source="curved_bottom_bg_gray"
+                               Aspect="AspectFill"
+                               WidthRequest="80"
+                               VerticalOptions="Start"/>
+                    </Grid>
+                </Frame>
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="FillAndExpand"
                              Margin="10,0,0,10"
@@ -96,10 +165,17 @@
                                  WidthRequest="25"
                                  Margin="20,0,0,0"/>
                 </StackLayout>
-                             
-                
-            </Grid>
-            
+
+
+
+                <ImageButton BackgroundColor="{StaticResource Key=SearchBarBG}"
+                         Source="plus"
+                         Margin="0,0,40,50"
+                         Padding="18"
+                         CornerRadius="14"
+                         HorizontalOptions="End"/>
+            </Grid>-->
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
